@@ -4,6 +4,7 @@ Documentation and Examples for using the lab's NI Hardware
 # Hardware
 ## Chassis
 - how many PXIe vs PXI slots do we have?
+- PXIe-1082
 ## Controller
 - PXIe-810
 ## Modules (separate by function? use case?)
