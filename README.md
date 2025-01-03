@@ -25,11 +25,16 @@ Documentation and Examples for using the lab's NI Hardware
     - FGEN
 - PXI-7854R
     - RIO
+    - Per this chart, need compactrio versions 15.0 and later and R series Support installed on host
+    - works with NI-RIO 21.9 with COmpactRIO support 21.0, R Series Multifunction RIO support 21.3!
+
 
 add FGPA and FGEN to chassis
 
 # Software
 Best case is LabVIEW. Can also use C, .NET, Python
+
+should also keep list of configuration of pxi software
 
 ### Accessories
 
