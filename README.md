@@ -1,7 +1,22 @@
 # NI-Documentation-Examples
-Documentation and Examples for using the lab's NI Hardware 
+The purpose of this repository is to provide use cases, documentation, and examples for using the LIST lab's NI Hardware. NI (National Instruments) is a manufacturer of industry-standard test and measurement hardware and software based in Austin, TX. You might know of them as "the LabVIEW company."
 
-working for eric's PC and the lab Lenovo
+The lab's primary DAQ (data acqusition) equipment is a PXI-System. PXI is type of modular instrumentation platform that features, among other things, a chassis with slots for a controller capable of running a real-time operating system (RTOS) and peripheral modules that connect over a high speed PCI/PCIe bus. Peripheral modules can be anything from analog or digital I/O cards, function generators, FPGA boards, etc. Think of it as a really powerful computer with I/O and the capabilities of any typical boxed instrument you'd find on the shelf in an electronics lab. In short, it's an incredibly powerful piece of equipment that allows the user to perform sophisicated automated testing. 
+
+Some more info on PXI:
+ - https://en.wikipedia.org/wiki/PCI_eXtensions_for_Instrumentation
+ - https://www.ni.com/en/shop/pxi.html
+
+NI has various hardware offerings. PXI is the most powerful and also highest cost. The chassis was probably $20,000. Most of what we do in the lab *really* doesn't require the use of PXI. Large companies, like a Bblue Origin would probably (they do!) use one of these if they needed to collect 300 strain gage meaurements at once. For our purposes, lower cost PC-based DAQs, such as the USB X-series DAQs or CompactDAQ, could probably suffice, BUT PXI does give you added flexibility and higher channel count. 
+
+PXI also has some added complexities that can make it challenging for users who are unfamiliar with the NI platform. My goal with this document is to make it easier to get you started, make using the equipment easier, and to demonstrate how to use this tool to make your testing more efficient by adding automation. 
+
+# Use Cases - Why Should I Use This?
+
+
+# Software
+
+The software and drivers are installed on the lab Lenovo PC, but you can also install on your personal Windows machines. Linux will run LabVIEW, but you'll want to check driver compatibility.
 
 # Hardware
 ## Chassis
@@ -46,4 +61,5 @@ should also keep list of configuration of pxi software
 ## Notes
 - Remote PXI devices will not be seen in Instrument Studio
 - https://www.ni.com/en/support/documentation/bugs/21/ni-dcpower-21-0-known-issues.html for dcpower 
+- working for eric's PC and the lab Lenovo
 
