@@ -7,24 +7,40 @@ Some more info on PXI:
  - https://en.wikipedia.org/wiki/PCI_eXtensions_for_Instrumentation
  - https://www.ni.com/en/shop/pxi.html
 
-NI has various hardware offerings. PXI is the most powerful and also highest cost. The chassis was probably $20,000. Most of what we do in the lab *really* doesn't require the use of PXI. Large companies, like a Bblue Origin would probably (they do!) use one of these if they needed to collect 300 strain gage meaurements at once. For our purposes, lower cost PC-based DAQs, such as the USB X-series DAQs or CompactDAQ, could probably suffice, BUT PXI does give you added flexibility and higher channel count. 
+NI has various hardware offerings. PXI is the most powerful and also highest cost. The chassis was probably $20,000. Most of what we do in the lab *really* doesn't require the use of PXI. Large companies, like a Blue Origin would probably (they do!) use one of these if they needed to collect 300 strain gage meaurements at once. For our purposes, lower cost PC-based DAQs, such as the USB X-series DAQs or CompactDAQ, could probably suffice, BUT PXI does give you added flexibility and higher channel count. 
 
 PXI also has some added complexities that can make it challenging for users who are unfamiliar with the NI platform. My goal with this document is to make it easier to get you started, make using the equipment easier, and to demonstrate how to use this tool to make your testing more efficient by adding automation. 
 
-# Use Cases - Why Should I Use This?
+# Use Cases - Why and When Should I Use This?
+Anytime you want to create a test or control system with some graphical user interface! You can automate and customize many features using this system's software and hardware to make your tests more efficient. Here are a few examples:
 
+- Collect analog voltage or current data from sensors or a circuit over time, process, visualize, and log
+- Arbitrary function generator
+- Automate a frequency sweep across a range of frequencies
+- Run that frequency sweep AND collect analog voltage or current data over time
+- Any kind of triggered analog or digital acquisition or control 
+- Any kind of simultaneous analog or digital I/O
+- Adjustable power supply
+- Control loops (from really low update rates, like once a minute or once per nanosecond)
+- USB camera acquisition
+- USB or serial device control
+- And much, much more...
 
-# Software
+# LIST NI Hardware
+
+Below is the list of NI hardware that the LIST lab currently owns. Currently, it is only the PXI, but if we get more, it will be added below.
+
+## PXI
 
 The software and drivers are installed on the lab Lenovo PC, but you can also install on your personal Windows machines. Linux will run LabVIEW, but you'll want to check driver compatibility.
 
-# Hardware
-## Chassis
+## Hardware
+### Chassis
 - how many PXIe vs PXI slots do we have?
 - PXIe-1082
-## Controller
+### Controller
 - PXIe-810
-## Modules (separate by function? use case?)
+### Modules (separate by function? use case?)
 - PXIe-6361
     - Multifunction
 - PXIe-6124
@@ -51,7 +67,7 @@ The software and drivers are installed on the lab Lenovo PC, but you can also in
 
 add FGPA and FGEN to chassis
 
-# Software
+## Software
 Best case is LabVIEW. Can also use C, .NET, Python
 
 should also keep list of configuration of pxi software
