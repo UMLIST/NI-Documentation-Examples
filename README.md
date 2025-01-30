@@ -5,7 +5,7 @@
 [Use Cases](#use-cases---why-and-when-should-i-use-this)
 
 * [LIST NI Systems](#list-ni-systems)
-    - [PXI]{#PXI}
+    - [PXI]{#pxi}
         - [PXI Hardware](#pxi-hardware)
         - [PXI Software](#pxi-software)
     - [Accessories](#accessories)
