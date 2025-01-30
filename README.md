@@ -1,7 +1,7 @@
 # NI-Documentation-Examples
 # Table of Contents
-1. [PXI]
-2. [Hardware]
+1. [PXI Link](#pxi)
+2. [Hardware Link](#hardware)
 The purpose of this repository is to provide use cases, documentation, and examples for using the LIST lab's NI Hardware. NI (National Instruments) is a manufacturer of industry-standard test and measurement hardware and software based in Austin, TX. You might know of them as "the LabVIEW company."
 
 The lab's primary DAQ (data acqusition) equipment is a PXI-System. PXI is type of modular instrumentation platform that features, among other things, a chassis with slots for a controller capable of running a real-time operating system (RTOS) and peripheral modules that connect over a high speed PCI/PCIe bus. Peripheral modules can be anything from analog or digital I/O cards, function generators, FPGA boards, etc. Think of it as a really powerful computer with I/O and the capabilities of any typical boxed instrument you'd find on the shelf in an electronics lab. In short, it's an incredibly powerful piece of equipment that allows the user to perform sophisicated automated testing. 
