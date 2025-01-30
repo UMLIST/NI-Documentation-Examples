@@ -26,7 +26,7 @@ NI has various hardware offerings. PXI is the most powerful and also highest cos
 PXI also has some added complexities that can make it challenging for users who are unfamiliar with the NI platform. My goal with this document is to make it easier to get you started, make using the equipment easier, and to demonstrate how to use this tool to make your testing more efficient by adding automation. 
 
 # Use Cases - Why and When Should I Use This?
-Anytime you want to create a test or control system with some graphical user interface! You can automate and customize many features using this system's software and hardware to make your tests more efficient. Here are a few examples (the modules in parathesis are capable of the use case):
+Anytime you want to create a test or control system with some graphical user interface! You can automate and customize many features using this system's software and hardware to make your tests more efficient. Here are a few examples (the modules in parentheses are capable of the use case):
 
 - Collect analog voltage or current data from sensors or a circuit over time, process, visualize, and log (PXIe-6361/PXI-6124/PXI-6255)
 - Arbitrary function generator (PXI-5402,PXIe-6361/PXI-6124/PXI-6255)
@@ -97,7 +97,7 @@ The software and drivers are installed on the lab Lenovo PC, but you can also in
     - https://www.ni.com/en-us/support/model.pxi-5402.html?srsltid=AfmBOor-52pWNQ0vhzAySwSrVR14bcsujI4jwzUNhLZO8XeI6y1pwioE
 - PXI-7854R
     - *Use Case*: SUPER fast and repeatable timing, control loops. Like, if nano-second level precision is required. 
-    - R Series Reconfigurable I/O (AI, AO, DIO), 8 AI, 8 AO, 96 DIO lines, 750 kS/s AI rate
+    - R Series Reconfigurable I/O (AI, AO, DIO), 8 AI, 8 AO, 96 DIO lines, 750 kS/s AI rate, FPGA
     - Need compactrio versions 15.0 and later and R series Support installed on host
     - works with NI-RIO 21.9 with COmpactRIO support 21.0, R Series Multifunction RIO support 21.3!
     - https://www.ni.com/docs/en-US/bundle/ni-78xx-api-ref/page/target2devicehelp/pxi-7854r.html?srsltid=AfmBOoodERm-_UESRxWNusYNZirWRwS4A6CTXwSX_uOjFzTJ2HkIT5Kv
