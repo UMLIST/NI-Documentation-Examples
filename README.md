@@ -1,7 +1,15 @@
 # NI-Documentation-Examples
 # Table of Contents
-1. [PXI Link](#pxi)
-2. [Hardware Link](#hardware)
+[About](#about)
+[Use Cases](#use-cases---why-and-when-should-i-use-this)
+[LIST NI Systems](#list-ni-systems)
+    - [PXI]{#pxi}
+        -[PXI Hardware](#pxi-hardware)
+        -[PXI Software](#pxi-software)
+    -[Accessories](#accessories)
+
+
+# About
 The purpose of this repository is to provide use cases, documentation, and examples for using the LIST lab's NI Hardware. NI (National Instruments) is a manufacturer of industry-standard test and measurement hardware and software based in Austin, TX. You might know of them as "the LabVIEW company."
 
 The lab's primary DAQ (data acqusition) equipment is a PXI-System. PXI is type of modular instrumentation platform that features, among other things, a chassis with slots for a controller capable of running a real-time operating system (RTOS) and peripheral modules that connect over a high speed PCI/PCIe bus. Peripheral modules can be anything from analog or digital I/O cards, function generators, FPGA boards, etc. Think of it as a really powerful computer with I/O and the capabilities of any typical boxed instrument you'd find on the shelf in an electronics lab. In short, it's an incredibly powerful piece of equipment that allows the user to perform sophisicated automated testing. 
@@ -29,7 +37,7 @@ Anytime you want to create a test or control system with some graphical user int
 - USB or serial device control
 - And much, much more...
 
-# LIST NI Hardware
+# LIST NI Systems
 
 Below is the list of NI hardware that the LIST lab currently owns. Currently, it is only the PXI, but if we get more, it will be added below.
 
@@ -37,15 +45,24 @@ Below is the list of NI hardware that the LIST lab currently owns. Currently, it
 
 The software and drivers are installed on the lab Lenovo PC, but you can also install on your personal Windows machines. Linux will run LabVIEW, but you'll want to check driver compatibility.
 
-## Hardware
-### Chassis
-- how many PXIe vs PXI slots do we have?
+### PXI Hardware
+#### Chassis
 - PXIe-1082
-### Controller
-- PXIe-810
-### Modules (separate by function? use case?)
+    - 8-slot (4 Hybrid, 2 PXIe, 1 PXIe timing)
+    - The modules detailed in the #modules section fit into this equipment
+    - https://www.ni.com/docs/en-US/bundle/pxie-1082-specs/page/specs.html
+#### Controller
+- PXIe-8101
+    - NOTE: this hardware does not support NI Linux RT and thus is recommended for upgrade
+    - For list of software installed, see the #pxi-software section
+    - 2.0 GHz, Single-Core Processor (Intel Celeron 575) running PharLap RTOS 
+    - 'Brains' of system, Ethernet Ports, USB ports, integrated hard drive, DVI port
+    - https://www.ni.com/en-us/support/model.pxie-8101.html?srsltid=AfmBOopLhgjzB5uA5tovUplBdNuWRRRt0CZY0_3eIk4rBw3mhH0lLpnc
+#### Modules 
 - PXIe-6361
-    - Multifunction
+    - *Use Case*: General data acquisition or I/O, up to 16 channels
+    - Multifunction Analog/Digital I/O, Counter
+    - https://www.ni.com/docs/en-US/bundle/pcie-pxie-usb-6361-specs/page/specs.html
 - PXIe-6124
     - multifunction, less channels, higher rate
 - PXIe-4330
@@ -70,7 +87,7 @@ The software and drivers are installed on the lab Lenovo PC, but you can also in
 
 add FGPA and FGEN to chassis
 
-## Software
+### PXI Software
 Best case is LabVIEW. Can also use C, .NET, Python
 
 should also keep list of configuration of pxi software
