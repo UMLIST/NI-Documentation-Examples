@@ -26,19 +26,21 @@ NI has various hardware offerings. PXI is the most powerful and also highest cos
 PXI also has some added complexities that can make it challenging for users who are unfamiliar with the NI platform. My goal with this document is to make it easier to get you started, make using the equipment easier, and to demonstrate how to use this tool to make your testing more efficient by adding automation. 
 
 # Use Cases - Why and When Should I Use This?
-Anytime you want to create a test or control system with some graphical user interface! You can automate and customize many features using this system's software and hardware to make your tests more efficient. Here are a few examples:
+Anytime you want to create a test or control system with some graphical user interface! You can automate and customize many features using this system's software and hardware to make your tests more efficient. Here are a few examples (the modules in parathesis are capable of the use case):
 
-- Collect analog voltage or current data from sensors or a circuit over time, process, visualize, and log
-- Arbitrary function generator
-- Automate a frequency sweep across a range of frequencies
-- Run that frequency sweep AND collect analog voltage or current data over time
-- Any kind of triggered analog or digital acquisition or control 
-- Any kind of simultaneous analog or digital I/O
-- Adjustable power supply
-- Control loops (from really low update rates, like once a minute or once per nanosecond)
-- USB camera acquisition
+- Collect analog voltage or current data from sensors or a circuit over time, process, visualize, and log (PXIe-6361/PXI-6124/PXI-6255)
+- Arbitrary function generator (PXI-5402,PXIe-6361/PXI-6124/PXI-6255)
+- Automate a frequency sweep across a range of frequencies (PXI-5402/PXIe-6361/PXI-6124/PXI-6255)
+- Run that frequency sweep AND collect analog voltage or current data over time (either any of PXIe-6361/PXI-6124/PXI-6255 or use the PXI-5402 for FGen and PXIe-6361 for input)
+- Any kind of triggered analog or digital acquisition or control (PXIe-6361/PXI-6124/PXI-6255)
+- Any kind of simultaneous analog or digital I/O (PXIe-6361/PXI-6124/PXI-6255)
+- Adjustable power supply (PXI-4110)
+- Non-deterministic control loops (from really low update rates, like once a minute or 1 kHz) (PXIe-6361/PXI-6124/PXI-6255)
+- Deterministic control loops and repeatable nanosecond level precision timing (PXI-7854R)
+- USB camera acquisition 
 - USB or serial device control
 - And much, much more...
+
 
 # LIST NI Systems
 
@@ -63,37 +65,48 @@ The software and drivers are installed on the lab Lenovo PC, but you can also in
     - https://www.ni.com/en-us/support/model.pxie-8101.html?srsltid=AfmBOopLhgjzB5uA5tovUplBdNuWRRRt0CZY0_3eIk4rBw3mhH0lLpnc
 #### Modules 
 - PXIe-6361
-    - *Use Case*: General data acquisition or I/O, up to 16 channels
-    - Multifunction Analog/Digital I/O, Counter
+    - *Use Case*: General data acquisition or signal generation
+    - Multifunction Analog/Digital I/O, Counter, up to 16 channels, triggering capabilities, 16-bit
     - https://www.ni.com/docs/en-US/bundle/pcie-pxie-usb-6361-specs/page/specs.html
 - PXIe-6124
-    - multifunction, less channels, higher rate
+    - *Use Case*: General data acquisition or signal generation BUT less channels and higher sample rates
+    - Multifunction Analog/Digital I/O, 4 AI (16 bit), 2 AO, 24 DIO, simultaneous sampling
+    - https://www.ni.com/docs/en-US/bundle/pxie-6124-specs/resource/372526b.pdf
 - PXIe-4330
-    - Bridge
+    - *Use Case*: Strain gages, load cells, any measurement require a bridge or Wheatstone bridge
+    - Bridge Measurements, 8-channel, 24-bit, 25 kS/s, simultaneous sampling
+    - https://www.ni.com/docs/en-US/bundle/pxie-4330-4331-specs/resource/375487c.pdf
 - PXI-4110 (2x)
-    - Power Supply
-    - working! need to manually enter name, not found in device searchm
-    - Currently DCPOWER0 but can be renamed in max
+    - *Use Case*: Power Supply
+    - Programmable, two isolated and single non-isolated channel, +/- 20 V, up to 1 A
+    - Currently DCPOWER0 but can be renamed. Note, you must refer to this module by its name shown in NI MAX
+    - https://www.ni.com/docs/en-US/bundle/pxi-4110-specs/page/specs.html
 - PXI-6255
-    - Multifunction, M-series, 40 diff channels
+    - *Use Case*: General data acquisition or signal generation, but more channels (40 diff, 80 SE)
+    - NOTE: the 62xx series has been replaced by the 63xx series. Only use this module if you need the higher channel count
+    - Multifunction, M-series, 40 diff channels, 16-bit, 1.25 MS/s
     - https://www.ni.com/docs/en-US/bundle/pci-pxi-usb-6255-specs/page/specs.html?srsltid=AfmBOoq-5YzM1bHs9xQWJFWIWizD94z_7dbEns4KCNUG1NWEAg1sSLXY
 - PXIe-4322
-    - AO
+    - *Use Case*: Analog output, signal generator
+    - 16-bit, 8 channel, 250 kS/s Ch-Ch Isolated Analog Output
+    - https://www.ni.com/en-us/shop/model/pxie-4322.html?srsltid=AfmBOop9KFZ59ro0JnUZ9uBikUgKl5nYz7Hw6ZH0Jz0bL3-PylhL3WtJ
 - PXI-5402
-    - FGEN
-    - working! Named FGEN0 and needs to be manually typed in FGEN resource control -- can rename in max
+    - *Use Case*: Arbitrary function generation
+    - 20 MHz, 1-channel, 14-bit waveform generator
+    - Working! Named FGEN0 and needs to be manually typed in FGEN resource control -- can rename in max
+    - https://www.ni.com/en-us/support/model.pxi-5402.html?srsltid=AfmBOor-52pWNQ0vhzAySwSrVR14bcsujI4jwzUNhLZO8XeI6y1pwioE
 - PXI-7854R
-    - RIO
-    - Per this chart, need compactrio versions 15.0 and later and R series Support installed on host
+    - *Use Case*: SUPER fast and repeatable timing, control loops. Like, if nano-second level precision is required. 
+    - R Series Reconfigurable I/O (AI, AO, DIO), 8 AI, 8 AO, 96 DIO lines, 750 kS/s AI rate
+    - Need compactrio versions 15.0 and later and R series Support installed on host
     - works with NI-RIO 21.9 with COmpactRIO support 21.0, R Series Multifunction RIO support 21.3!
+    - https://www.ni.com/docs/en-US/bundle/ni-78xx-api-ref/page/target2devicehelp/pxi-7854r.html?srsltid=AfmBOoodERm-_UESRxWNusYNZirWRwS4A6CTXwSX_uOjFzTJ2HkIT5Kv
 
-
-add FGPA and FGEN to chassis
 
 ### PXI Software
-Best case is LabVIEW. Can also use C, .NET, Python
+Best case is to use LabVIEW, but you can also use C, .NET, Python. This document provides examples in LabVIEW. Information on LabVIEW: https://www.ni.com/en/shop/labview.html
 
-should also keep list of configuration of pxi software
+Here is a list of software current installed on the PXI controller:
 
 ### Accessories
 
