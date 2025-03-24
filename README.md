@@ -108,7 +108,16 @@ Best case is to use LabVIEW, but you can also use C, .NET, Python. This document
 
 Here is a list of software current installed on the PXI controller:
 
+
 ### Accessories
+- BNC-2110
+- BNC-2090
+- NI TB-4330
+- NI TB-2706
+- SCB-68
+- VHD cables
+- GPIB-USB-HS
+- DAQCard-6036E
 
 ## Notes
 - Remote PXI devices will not be seen in Instrument Studio
