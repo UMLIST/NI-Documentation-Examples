@@ -110,7 +110,7 @@ The PXI-8101 embedded controller is running PharLap RTOS, so the software must b
 
 Aim to install anything versioned for LabVIEW 2021, but a complete list of the installed software and drivers is found here:
 
-Here is a list of software current installed on the PXI controller: [a relative link](config/max_report.html)
+Here is a list of software current installed on the PXI controller: [PXI SW Configuration (HTML)](config/max_report.html)
 
 
 ### Accessories
