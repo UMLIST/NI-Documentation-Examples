@@ -104,23 +104,32 @@ The software and drivers are installed on the lab Lenovo PC, but you can also in
 
 
 ### PXI Software
-Best case is to use LabVIEW, but you can also use C, .NET, Python. This document provides examples in LabVIEW. Information on LabVIEW: https://www.ni.com/en/shop/labview.html
+Best case is to use LabVIEW, but you can also use C, .NET, Python. This documentation provides examples in LabVIEW. Information on LabVIEW: https://www.ni.com/en/shop/labview.html
 
-Here is a list of software current installed on the PXI controller:
+The PXI-8101 embedded controller is running PharLap RTOS, so the software must be installed on the controller and the software version on your development PC must match the version installed on the controller. Our controller version (and Phar Lap) is EoL so we are stuck at LabVIEW 2021 SP1. 
+
+Aim to install anything versioned for LabVIEW 2021, but a complete list of the installed software and drivers is found here:
+
+Here is a list of software current installed on the PXI controller: ([a relative link](max_report.html))
 
 
 ### Accessories
 - BNC-2110
+    - a breakout board with BNC connections for PXIe-6361, 6124
 - BNC-2090
+    - a rack mountable BNC breakout for PXIe-6361, 6124
 - NI TB-4330
+    - breakout terminal block for PXI-4330
 - NI TB-2706
 - SCB-68
-- VHD cables
+    - a breakout board with screw terminal connections for PXIe-6361, 6124
+- 68-pin VHDCI cables
+    - for connecting 68 pin boards to breakout modules 
 - GPIB-USB-HS
 - DAQCard-6036E
 
 ## Notes
-- Remote PXI devices will not be seen in Instrument Studio
+- Remote PXI devices will not be seen in Instrument Studio for Flexlogger
 - https://www.ni.com/en/support/documentation/bugs/21/ni-dcpower-21-0-known-issues.html for dcpower 
 - working for eric's PC and the lab Lenovo
 
