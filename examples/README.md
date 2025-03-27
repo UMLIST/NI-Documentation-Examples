@@ -29,6 +29,7 @@ There are many, many more examples by going to the LabVIEW Help->Find Examples m
 - Digital - Continuous Output.vi
 - FGEN Frequency Sweep.vi 
 - FGEN Function Generator.vi
+- FPGA Target Example.vi
 - Simple Serial.vi
 - Strain - Continuous Input.vi
 - Thermocouple - Continuous Input.vi

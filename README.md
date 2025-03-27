@@ -110,7 +110,7 @@ The PXI-8101 embedded controller is running PharLap RTOS, so the software must b
 
 Aim to install anything versioned for LabVIEW 2021, but a complete list of the installed software and drivers is found here:
 
-Here is a list of software current installed on the PXI controller: [PXI SW Configuration (HTML)](config/max_report.html)
+Here is a list of software currently installed on the PXI controller: [PXI SW Configuration (HTML)](config/max_report.html)
 
 
 ### Accessories
@@ -122,7 +122,7 @@ Here is a list of software current installed on the PXI controller: [PXI SW Conf
     - breakout terminal block for PXI-4330
 - NI TB-2706
 - SCB-68
-    - a breakout board with screw terminal connections for PXIe-6361, 6124
+    - a breakout board with screw terminal connections for PXIe-6361, 6124, PXI-7854R
 - 68-pin VHDCI cables
     - for connecting 68 pin boards to breakout modules 
 - GPIB-USB-HS
